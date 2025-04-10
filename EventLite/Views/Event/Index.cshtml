@@ -1,0 +1,28 @@
+﻿@model List<Event>
+
+<h1>Events</h1>
+<table class="table table-bordered table-striped">
+	<thead>
+	<tr>
+			<th scope="col">
+			Event
+		</th>
+			<th scope="col">
+			Date/Time
+		</th>
+			<th scope ="col">
+			Location
+		</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var obj in Model.OrderBy(u => u.EventId))
+		{
+			<tr>
+				<td>@obj.Title</td>
+				<td>@obj.StartDateTime</td>
+				<td>@obj.Location</td>	
+			</tr>
+		}
+	</tbody>
+</table>
